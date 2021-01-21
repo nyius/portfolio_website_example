@@ -1,0 +1,20 @@
+// $font-style: "Dosis", sans-serif;
+$font-style: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$website-width: 1280px;
+
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$dark-color: #333;
+$medium-color: #ccc;
+
+// This isn't ../dist/img/showcase.jpg becasue when this is compiled, this code will be in the CSS folder and not this one
+$bg-image: url("../img/showcase.jpg");
+
+// Set text color
+@function set-text-color($color) {
+	@if (lightness($color) > 50) {
+		@return $dark-color;
+	} @else {
+		@return $light-color;
+	}
+}

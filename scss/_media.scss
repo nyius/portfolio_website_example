@@ -1,0 +1,153 @@
+// Tablets & Smaller
+@media (max-width: 800px) {
+	#header-home {
+		height: 30rem;
+
+		.header-content {
+			padding-top: 5rem;
+		}
+	}
+
+	.items {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+// Smartphones
+@media (max-width: 500px) {
+	#main-nav {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			padding: 1rem;
+		}
+	}
+
+	// Seperating it this way so we can style both header-inner and header-home in the same clump
+	#header {
+		&-home {
+			height: 10rem;
+			border-bottom: 3px solid $main-color;
+			padding-top: 0;
+			padding-bottom: 1rem;
+			background-position: 20% 30%;
+
+			.header-content {
+				display: none;
+			}
+		}
+
+		&-inner {
+			height: 10rem;
+			border-bottom: 3px solid $main-color;
+			padding-bottom: 1rem;
+		}
+	}
+
+	// Stack Grid Columns
+	#home-a .specials,
+	#home-b .stats,
+	#home-c .process,
+	#about-d .testimonials,
+	#contact-b .contact-info,
+	.items {
+		grid-template-columns: 1fr;
+	}
+
+	// Home
+	#home {
+		&-a {
+			.specials div {
+				border-bottom: 1px $light-color solid;
+				padding-bottom: 1rem;
+
+				&:last-child {
+					border: none;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		&-b {
+			.stats div {
+				padding: 2rem 0 1rem 0;
+			}
+		}
+	}
+
+	// Footer
+	#main-footer {
+		height: 7rem;
+
+		.footer-content {
+			flex-direction: column;
+			padding: 1rem;
+			height: 5rem;
+		}
+	}
+
+	// About
+	#about {
+		&-a {
+			.about-info {
+				grid-template-areas:
+					"bioimage"
+					"bio"
+					"aw1"
+					"aw2"
+					"aw3";
+			}
+		}
+
+		&-c {
+			display: none;
+		}
+	}
+
+	// COntact
+	#contact {
+		&-a {
+			.text-fields {
+				grid-template-areas:
+					"name"
+					"subject"
+					"email"
+					"phone"
+					"message";
+			}
+		}
+
+		&-b {
+			.contact-info {
+				div {
+					margin-bottom: 1rem;
+					padding-bottom: 1rem;
+					border-bottom: 1px solid $main-color;
+
+					&:last-child {
+						border: none;
+						padding-bottom: 0%;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		&-c {
+			h1 {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+// Landscape
+@media (max-height: 580px) {
+	#header-home {
+		.header-content {
+			padding-top: 3rem;
+		}
+	}
+}

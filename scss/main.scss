@@ -1,0 +1,461 @@
+@import "variables";
+@import "utilities";
+@import "item_grid";
+
+// General Styles
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font-style;
+	line-height: 1.6;
+	background: #fff;
+	color: $dark-color;
+}
+
+a {
+	text-decoration: none;
+	color: $dark-color;
+}
+
+ul {
+	list-style: none;
+}
+
+h2,
+h3,
+h4 {
+	text-transform: uppercase;
+}
+
+img {
+	// Set images to 100% as default so they fit to whatever container they're in
+	width: 100%;
+}
+
+// ----------------------------------------------------------------------
+// Logo
+#logo {
+	width: 70px;
+	height: 70px;
+	color: white;
+	text-transform: uppercase;
+}
+
+// ----------------------------------------------------------------------
+// main nav
+#main-nav {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1rem;
+
+	ul {
+		display: flex;
+	}
+
+	li {
+		padding: 1rem 1.5rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+		text-transform: uppercase;
+		// Border here is transparent because we want to have a hover effect that shows it
+		border-bottom: 3px transparent solid;
+		padding-bottom: 0.5rem;
+		transition: border-color 0.3s;
+
+		&:hover {
+			border-color: $medium-color;
+		}
+
+		&.current {
+			border-color: $main-color;
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// Header
+#header {
+	// Header Home
+	&-home {
+		background: $bg-image no-repeat center right/cover;
+		height: 100vh;
+		color: #fff;
+
+		// Header Content
+		.header-content {
+			text-align: center;
+			padding-top: 20%;
+
+			h1 {
+				font-size: 4rem;
+				line-height: 1.2;
+			}
+		}
+	}
+
+	// Header Inner
+	&-inner {
+		background: $bg-image no-repeat 20% 30% / cover;
+		height: 5.5rem;
+		border-bottom: 3px solid $main-color;
+
+		.container {
+			padding: 0;
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// Home Sections
+
+#home {
+	// home section A
+	&-a {
+		.specials {
+			display: grid;
+			gap: 1rem;
+			grid-template-columns: repeat(4, 1fr);
+
+			.fas {
+				color: $main-color;
+				padding-bottom: 0.4rem;
+			}
+		}
+	}
+
+	// home section B
+	&-b {
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+
+			li {
+				line-height: 2;
+
+				&.stats-title {
+					font-size: 1.5rem;
+				}
+
+				&.stats-number {
+					font-size: 2rem;
+					font-weight: bold;
+				}
+			}
+			div {
+				padding: 3rem 0;
+
+				&:nth-child(odd) {
+					background: $light-color;
+				}
+
+				&:nth-child(even) {
+					background: $medium-color;
+				}
+			}
+		}
+	}
+
+	// Home Section C
+	&-c {
+		background: $dark-color;
+		color: set-text-color($dark-color);
+
+		.process {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1.5rem;
+			text-align: center;
+
+			&-step {
+				position: absolute;
+				top: 0;
+				right: 0;
+				font-size: 28px;
+				background: $main-color;
+				border-radius: 50%;
+				height: 15px;
+				width: 15px;
+				line-height: 15px;
+				padding: 1rem;
+				transition: all 1s;
+			}
+
+			&-box {
+				transition: all 1s;
+				padding: 1rem 2rem;
+
+				i {
+					border-radius: 50%;
+					background: $light-color;
+					color: set-text-color($light-color);
+					padding: 2rem;
+					width: 70px;
+					height: 70px;
+					line-height: 70px;
+					text-align: center;
+					position: relative;
+					transition: all 1s;
+				}
+
+				&:hover {
+					background: $light-color;
+					color: set-text-color($light-color);
+
+					i {
+						background: $main-color;
+						width: 90px;
+						height: 90px;
+						line-height: 90px;
+
+						.process-step {
+							background: $dark-color;
+							color: $light-color;
+						}
+					}
+				}
+			}
+
+			h3 {
+				color: $main-color;
+				padding-bottom: 1rem;
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// About
+#about {
+	// About A
+	&-a {
+		.about-info {
+			display: grid;
+			grid-template-areas:
+				"bioimage bio bio"
+				"aw1 aw2 aw3";
+			gap: 1.2rem;
+
+			// Grid areas
+			.bio-image {
+				grid-area: bioimage;
+			}
+
+			.bio {
+				grid-area: bio;
+				border-left: 3px solid $main-color;
+				padding: 0.8rem;
+			}
+
+			.award-1 {
+				grid-area: aw1;
+			}
+			.award-2 {
+				grid-area: aw2;
+			}
+			.award-3 {
+				grid-area: aw3;
+			}
+
+			.award-1 .fas,
+			.award-2 .fas,
+			.award-3 .fas {
+				color: $main-color;
+				margin: 1rem;
+			}
+		}
+	}
+
+	// About B
+	&-b {
+		.progress {
+			overflow: hidden;
+			height: 20px;
+			background: $medium-color;
+			border-radius: 5px;
+			margin-bottom: 0.6rem;
+
+			div {
+				height: 100%;
+				color: $light-color;
+				text-align: center;
+				background: $main-color;
+			}
+		}
+	}
+
+	// Section C
+	&-c {
+		.about-logos {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 2rem;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				width: 70%;
+				transition: all 1s;
+
+				&:hover {
+					width: 80%;
+				}
+			}
+		}
+	}
+
+	// Section D
+	&-d {
+		.testimonials {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 0.5rem;
+
+			div {
+				padding: 0.5rem;
+				transition: all 1s;
+
+				ul {
+					list-style: none;
+					margin-top: 1rem;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+				}
+
+				p {
+					border: 1px solid $medium-color;
+					border-radius: 5px;
+					padding: 0.5rem;
+				}
+
+				img {
+					width: 70px;
+					height: 70px;
+					border-radius: 50%;
+					margin-right: 0.5;
+					transition: all 1s;
+				}
+
+				&:hover {
+					background: $dark-color;
+					color: set-text-color($dark-color);
+				}
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// Contact
+#contact {
+	&-a {
+		.text-fields {
+			display: grid;
+			grid-template-areas:
+				"name email"
+				"subject phone"
+				"message message";
+			gap: 1.2rem;
+			margin-bottom: 1.2rem;
+
+			// grid areas
+			.name-input {
+				grid-area: name;
+			}
+			.subject-input {
+				grid-area: subject;
+			}
+			.email-input {
+				grid-area: email;
+			}
+			.phone-input {
+				grid-area: phone;
+			}
+			.message-input {
+				grid-area: message;
+				height: 100px;
+			}
+
+			// Input container around all the inputs
+			.text-input {
+				padding: 0.5rem 1rem;
+			}
+		}
+
+		button[type="submit"] {
+			width: 100%;
+		}
+	}
+
+	&-b {
+		.contact-info {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			text-align: center;
+		}
+	}
+
+	&-c {
+		transition: all 0.5s;
+
+		h1 {
+			font-size: 4rem;
+			color: $dark-color;
+			transition: all 0.5;
+		}
+
+		&:hover {
+			background: $dark-color;
+
+			h1 {
+				color: $main-color;
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// Footer
+#main-footer {
+	background: $dark-color;
+	color: $light-color;
+	height: 5rem;
+
+	.container {
+		border-top: 1px $medium-color dotted;
+		padding: 0;
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		height: 5rem;
+		align-items: center;
+
+		.social .fab {
+			margin-right: 1rem;
+			border: 2px $light-color solid;
+			border-radius: 50%;
+			height: 20px;
+			width: 20px;
+			line-height: 20px;
+			text-align: center;
+			padding: 0.5rem;
+			transition: all 1s;
+
+			&:hover {
+				background: $main-color;
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------------------------
+// Media Queries
+@import "media";
